@@ -1,94 +1,105 @@
-🤖 Fur I.A. - A Assistente Sarcástica
-
-"Não sou paga para ser simpática. Sou paga para processar dados... e olhe lá." — Fur I.A.
-
-📖 Sobre o Projeto
-
-A Fur I.A. é uma prova de conceito de um Chatbot Full-Stack com personalidade forte, hospedado na nuvem. Diferente das IAs assistentes tradicionais, ela foi programada via Engenharia de Prompt para ser sarcástica, rabugenta e direta.
-
-O projeto utiliza a API do Google (Gemini 1.5 Flash) e converte as respostas de texto para áudio (TTS) em tempo real, rodando em arquitetura serverless no Google Cloud Platform (GCP).
-
-🔴 Demonstração ao Vivo (Google Cloud Run)
-
-A aplicação está implantada em produção e rodando em um container no Google Cloud. Clique abaixo para testar:
+# 🤖✨ Fur I.A. — A Assistente Sarcástica da Nuvem
 
 <div align="center">
 
-Link direto: https://fur-ia-355272677756.us-central1.run.app/
+![Python](https://img.shields.io/badge/Python-3.9+-3776AB.svg?style=for-the-badge&logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B.svg?style=for-the-badge&logo=streamlit&logoColor=white)
+![Google Gemini](https://img.shields.io/badge/Google_Gemini-8E75B2.svg?style=for-the-badge&logo=google&logoColor=white)
+![Cloud Run](https://img.shields.io/badge/Google_Cloud_Run-4285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED.svg?style=for-the-badge&logo=docker&logoColor=white)
 
 </div>
 
-🚀 Arquitetura e Tecnologias no GCP
+> 💬 *"Não sou paga para ser simpática. Sou paga para processar dados... e olhe lá."*  
+> — **Fur I.A.**
 
-Este projeto demonstra um fluxo moderno de Deploy de IA na nuvem do Google:
+---
 
-Componente
+## 📖 Sobre o Projeto
 
-Tecnologia GCP Utilizada
+A **Fur I.A.** é um chatbot **Full-Stack** com personalidade forte — sarcástica, direta e levemente irritada com humanos.  
+Ela foi construída com **Engenharia de Prompt**, hospedada em arquitetura **serverless** e equipada com:
 
-Função no Projeto
+- ✅ **Google Gemini 1.5 Flash**  
+- ✅ **TTS em tempo real**  
+- ✅ **Streamlit**  
+- ✅ **Deploy automático no Cloud Run**
 
-Cérebro (IA)
+O resultado é uma IA que responde rápido, fala com você e ainda te trata mal — tudo com elegância.
 
-Google Gemini API
+---
 
-Modelo gemini-1.5-flash para geração de texto com raciocínio rápido e econômico.
+## 🔴 Demonstração ao Vivo
 
-Hospedagem
+Acesse a versão em produção no Google Cloud Run:
 
-Cloud Run
+<div align="center">
 
-Execução do container da aplicação de forma serverless (escala automática).
+[![Acessar Demo](https://img.shields.io/badge/▶️_CLIQUE_PARA_TESTAR-FF4B4B?style=for-the-badge&logo=google-cloud&logoColor=white)](https://fur-ia-355272677756.us-central1.run.app/)
 
-Container
+**Link direto:**  
+https://fur-ia-355272677756.us-central1.run.app/
 
-Docker
+</div>
 
-Empacotamento da aplicação Streamlit e suas dependências.
+---
 
-Build
+## 🚀 Arquitetura e Tecnologias
 
-Cloud Build
+| Componente | Tecnologia | Função |
+|-----------|------------|--------|
+| 🧠 **Cérebro da IA** | Google Gemini API | Modelo `gemini-1.5-flash` para respostas rápidas e econômicas |
+| ☁️ **Hospedagem** | Cloud Run | Execução serverless com escala automática |
+| 📦 **Container** | Docker | Empacotamento da aplicação |
+| 🔧 **Build** | Cloud Build | Criação da imagem do container |
 
-(Implícito no deploy) Constrói a imagem do container na nuvem.
+---
 
-💡 Destaques Técnicos & Desafios
+## 💡 Destaques Técnicos
 
-1. Integração com Gemini Flash
+### ✅ 1. Integração com Gemini Flash  
+O modelo **gemini-1.5-flash** foi escolhido por:
 
-O projeto foi otimizado para utilizar o modelo gemini-1.5-flash, garantindo baixa latência nas respostas sarcásticas e viabilidade econômica para hospedagem serverless.
+- Baixa latência  
+- Custo reduzido  
+- Ótimo desempenho para diálogos rápidos e sarcásticos  
 
-2. Personalidade vs. Filtros de Segurança no GCP
+---
 
-Para garantir que a IA mantivesse a persona "rude" sem ser bloqueada pela API na nuvem:
+### ✅ 2. Personalidade vs. Filtros de Segurança  
+Para manter a IA rude sem ser bloqueada:
 
-Ajuste fino nos safety_settings (HarmBlockThreshold) para BLOCK_NONE.
+- Ajuste fino em `safety_settings` → `BLOCK_NONE`  
+- System Instruction reforçando o “roleplay”  
+- Controle para não violar políticas da API  
 
-System Instruction robusta para definir o "roleplay" da IA sem violar as políticas de uso.
+---
 
-📦 Como Rodar Localmente
+### 📦 Como Rodar Localmente
 
-Pré-requisitos: Python 3.9+ e uma chave de API do Google Gemini.
+Pré-requisitos: **Python 3.9+** e uma **API Key do Google Gemini**
 
-# 1. Clone o repositório
-git clone [https://github.com/rogeriocabral30/Fur-I.A---sarcastica.git](https://github.com/rogeriocabral30/Fur-I.A---sarcastica.git)
+## 1️⃣ Clone o repositório
+
+bash
+git clone https://github.com/rogeriocabral30/Fur-I.A---sarcastica.git
 cd Fur-I.A---sarcastica
 
-# 2. Crie um ambiente virtual
+###  2️⃣ Crie um ambiente virtual
 python -m venv venv
-# Windows: venv\Scripts\activate
-# Linux/Mac: source venv/bin/activate
 
-# 3. Instale as dependências
+## 3️⃣ Instale as dependências
 pip install -r requirements.txt
 
-# 4. Configure a API Key
-# Crie um arquivo .env na raiz e adicione: GEMINI_API_KEY="SUA_CHAVE"
+ 4️⃣ Configure a API Key
+ Crie um arquivo .env:
+ GEMINI_API_KEY="SUA_CHAVE"
 
-# 5. Execute
+ 5️⃣ Execute
 streamlit run app.py
 
 
-👤 Autor
+👨‍💻Autor — Rogério Cabral
+<div align="left"><a href="https://www.linkedin.com/in/rog%C3%A9rio-cabral-609072397/"><img src="https://img.shields.io/badge/LinkedIn-ACESSAR-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+<a href="https://github.com/rogeriocabral30"><img src="https://img.shields.io/badge/GitHub-ACESSAR-100000?style=for-the-badge&logo=github&logoColor=white"></a></div>
 
-Rogério Cabral
